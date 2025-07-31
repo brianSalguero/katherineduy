@@ -1,0 +1,129 @@
+/* Fuente y fondo general */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #ffe6f0;
+  color: #4b2e2e;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor principal */
+.carta-container {
+  max-width: 90%;
+  width: 100%;
+  margin: 50px auto;
+  padding: 25px 20px;
+  background-color: #ffffffee;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid #ffb6c1;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: entrada 2s ease-out forwards;
+}
+
+/* Animación de entrada */
+@keyframes entrada {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo {
+  font-family: 'Brush Script MT', cursive;
+  color: #d6336c;
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Texto principal */
+.contenido {
+  font-size: 1.05em;
+  white-space: pre-wrap;
+  animation: fadeIn 2.5s ease-in forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+/* Firma */
+.firma {
+  margin-top: 30px;
+  text-align: right;
+  font-style: italic;
+  color: #7c4a4a;
+  animation: fadeIn 3s ease-in forwards;
+  opacity: 0;
+  animation-delay: 1.5s;
+}
+
+/* Corazón animado */
+.corazon {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 20px;
+  color: #ff3366;
+  animation: latido 1s infinite;
+}
+
+/* Animación de latido */
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* FadeIn general */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .carta-container {
+    max-width: 600px;
+    padding: 40px;
+  }
+
+  .titulo {
+    font-size: 3em;
+  }
+
+  .contenido {
+    font-size: 1.15em;
+  }
+
+.boton-sorpresa {
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 3.5s ease-in forwards;
+  opacity: 0;
+  animation-delay: 2s;
+}
+
+.boton-sorpresa a {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  color: white;
+  background-color: #ff69b4;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton-sorpresa a:hover {
+  background-color: #ff85c1;
+  transform: scale(1.05);
+}
+
+}
