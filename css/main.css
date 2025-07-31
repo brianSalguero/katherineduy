@@ -35,7 +35,7 @@ body {
     display: inline-block;
     font-weight: bold;
     color: #e91e63;
-    margin: 0 2px;
+    margin: 0 20px;
     animation: glow 2.5s ease-in-out infinite;
 }
 
