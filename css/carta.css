@@ -11,7 +11,8 @@ body {
 
 /* Contenedor principal */
 .carta-container {
-  width: 90%;
+  max-width: 90%;
+  width: 85%;
   margin: 50px;
   padding: 25px 20px;
   background-color: #ffffffee;
