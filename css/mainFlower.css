@@ -41,7 +41,7 @@ body {
 }
 .titulo {
   top: 0;
-  margin-top: 30px;
+  margin-top: 10px;
   font-family: "Arial Narrow", Arial, sans-serif;
   color: yellow;
   position: absolute;
@@ -51,6 +51,7 @@ body {
   animation: fadeIn 3s ease-in-out forwards;
   text-align: center;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
