@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Katherine Duy Álvarez</title>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function randomImageAndText() {
+            const images = [
+                "img/foto1.jpg", "img/foto2.jpg", "img/foto3.jpg", "img/foto4.jpg", "img/foto5.jpg",
+                "img/foto6.jpg", "img/foto7.jpg", "img/foto10.jpg", "img/foto14.jpg", "img/foto18.jpg"
+            ];
+
+            const phrases = [
+                "Salud mi amor, tomase solo una que ya acaba 🥃",
+                "Un momentooo... que ya acaba chamadre! 😐",
+                "Esperaa... no te duermasss bebee 😠",
+                "Con ese besito... que rico esperar!! 😚",
+                "Ríete mientras acaba amorr WUAJAJAJA 😂",
+                "Aguanta amor... todo bienn 😎",
+                "Vamos a por esas chelas d1 amorr! 🍻",
+                "Espera bebe... que hoy es dia de fútbol!! ⚽",
+                "Otra vez esperando... chamadre ya vaaa! 🤨",
+                "Paciencia... que lo bueno se hace esperar bebe 😶"
+            ];
+
+            // Selecciona un índice aleatorio para las imágenes y frases
+            const randomIndex = Math.floor(Math.random() * images.length);
+
+            // Actualiza la imagen y la frase en el DOM
+            document.getElementById('loadingImage').src = images[randomIndex];
+            document.getElementById('loadingText').innerHTML = phrases[randomIndex];
+        }
+
+        window.onload = function () {
+
+            randomImageAndText();
+            const gameParam = getParameterByName('game');
+
+            if (gameParam === 'JUEGO1') {
+                setTimeout(function () {
+                    window.location.href = 'juego1.html';
+                }, 8000);
+            } else if (gameParam === 'JUEGO2') {
+                setTimeout(function () {
+                    window.location.href = 'juego2.html';
+                }, 8000);
+            } else if (gameParam === 'JUEGO3') {
+                setTimeout(function () {
+                    window.location.href = 'juego3.html';
+                }, 8000);
+            } else if (gameParam === 'JUEGO4') {
+                setTimeout(function () {
+                    window.location.href = 'juego4.html';
+                }, 8000);
+            } else if (gameParam === 'JUEGO5') {
+                setTimeout(function () {
+                    window.location.href = 'juego5.html';
+                }, 8000);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <p id="cargando">Cargando...</p>
+    <div class="loading-container">
+        <img id="loadingImage" alt="Loading Image" class="loading-image">
+    </div>
+    <p class="loading-description" id="loadingText"></p>
+</body>
+
+</html>

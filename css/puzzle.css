@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.puzzle-container {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+    position: relative;
+}
+
+.puzzle-piece {
+    background-image: url('../img/beso2.jpg');
+    background-size: 400px 400px;
+    cursor: pointer;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    transition: opacity 0.2s;
+    z-index: 1;
+}
+
+.puzzle-piece[data-position="1"] { background-position: 0 0; }
+.puzzle-piece[data-position="2"] { background-position: -100px 0; }
+.puzzle-piece[data-position="3"] { background-position: -200px 0; }
+.puzzle-piece[data-position="4"] { background-position: -300px 0; }
+
+.puzzle-piece[data-position="5"] { background-position: 0 -100px; }
+.puzzle-piece[data-position="6"] { background-position: -100px -100px; }
+.puzzle-piece[data-position="7"] { background-position: -200px -100px; }
+.puzzle-piece[data-position="8"] { background-position: -300px -100px; }
+
+.puzzle-piece[data-position="9"] { background-position: 0 -200px; }
+.puzzle-piece[data-position="10"] { background-position: -100px -200px; }
+.puzzle-piece[data-position="11"] { background-position: -200px -200px; }
+.puzzle-piece[data-position="12"] { background-position: -300px -200px; }
+
+.puzzle-piece[data-position="13"] { background-position: 0 -300px; }
+.puzzle-piece[data-position="14"] { background-position: -100px -300px; }
+.puzzle-piece[data-position="15"] { background-position: -200px -300px; }
+.puzzle-piece[data-position="16"] { background-position: -300px -300px; }
+
+.puzzle-piece.selected {
+    opacity: 0.6;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error {
+    animation: shake 0.3s ease-in-out;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#canvas {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#checkButton {
+    z-index: 1;
+}
+
+#continuar {
+    z-index: 1;
+}
+
+.botones{
+    padding: 9px;
+    border: none;
+    background-color: #0a2be9;
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.botones:hover{
+    background-color: rgb(28, 150, 150);
+}
+
+.botones a{
+    text-decoration: none;
+    color: #111;
+}
+
+.puzzle-container.disabled {
+    pointer-events: none;
+}
+
+.hidden-letter {
+    display: none;
+    font-size: 100px;
+    font-weight: bold;
+    color: #ff4081;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.show-letter {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
