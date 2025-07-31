@@ -54,6 +54,7 @@ body {
 .greetings > span:nth-child(6){
     animation-delay: 1s;
 }
+
 /* Animación opcional para efecto visual */
 @keyframes pop {
     0% {
